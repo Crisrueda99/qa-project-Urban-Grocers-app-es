@@ -1,15 +1,15 @@
-﻿# QA Project for Urban Grocers Kit Creation
+﻿# Proyecto QA para Creación de Kits en Urban Grocers
 
-This project automates tests for the kit creation API, focusing on the 'name' field validation as per the provided checklist.
+Este proyecto automatiza pruebas para la API de creación de kits, enfocándose en la validación del campo 'name' según la lista de comprobación proporcionada.
 
-## How to run tests
+## Cómo ejecutar las pruebas
 
-1. Ensure Python and virtual environment are set up.
+1. Asegúrate de que Python y el entorno virtual estén configurados.
 
-2. Install dependencies: pip install requests pytest
+2. Instala las dependencias: pip install requests pytest
 
-3. Update `configuration.py` with the actual server URL obtained after launching the server.
+3. Actualiza `configuration.py` con la URL real del servidor obtenida después de lanzar el servidor.
 
-4. Run the tests: pytest create_kit_name_kit_test.py
+4. Ejecuta las pruebas: pytest create_kit_name_kit_test.py
 
-The tests cover positive and negative scenarios for the 'name' field in kit creation requests.
+Las pruebas cubren escenarios positivos y negativos para el campo 'name' en las solicitudes de creación de kits.
