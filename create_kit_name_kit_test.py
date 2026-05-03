@@ -2,6 +2,7 @@ import pytest
 from sender_stand_request import post_new_client_kit, get_new_user_token
 from data import kit_body_1, kit_body_2, kit_body_3, kit_body_4, kit_body_5, kit_body_6, kit_body_7, kit_body_8, kit_body_9
 
+
 def positive_assert(kit_body):
     auth_token = get_new_user_token()
     response = post_new_client_kit(kit_body, auth_token)
