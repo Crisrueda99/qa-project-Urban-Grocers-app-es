@@ -1,0 +1,95 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.1, pytest-9.0.3, pluggy-1.6.0 -- c:\Users\Crisrueda99\Desktop\TripleTen Projects\sprint8\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Crisrueda99\Desktop\TripleTen Projects\sprint8
+collecting ... collected 9 items
+
+create_kit_name_kit_test.py::test_1_allowed_characters_1 PASSED          [ 11%]
+create_kit_name_kit_test.py::test_2_allowed_characters_511 PASSED        [ 22%]
+create_kit_name_kit_test.py::test_3_less_than_allowed_0 FAILED           [ 33%]
+create_kit_name_kit_test.py::test_4_more_than_allowed_512 FAILED         [ 44%]
+create_kit_name_kit_test.py::test_5_special_characters PASSED            [ 55%]
+create_kit_name_kit_test.py::test_6_spaces_allowed PASSED                [ 66%]
+create_kit_name_kit_test.py::test_7_numbers_allowed PASSED               [ 77%]
+create_kit_name_kit_test.py::test_8_parameter_not_passed FAILED          [ 88%]
+create_kit_name_kit_test.py::test_9_wrong_type_number FAILED             [100%]
+
+================================== FAILURES ===================================
+_________________________ test_3_less_than_allowed_0 __________________________
+
+    def test_3_less_than_allowed_0():
+>       negative_assert_code_400(kit_body_3)
+
+create_kit_name_kit_test.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+kit_body = {'name': ''}
+
+    def negative_assert_code_400(kit_body):
+        auth_token = get_new_user_token()
+        response = post_new_client_kit(kit_body, auth_token)
+>       assert response.status_code == 400
+E       assert 201 == 400
+E        +  where 201 = <Response [201]>.status_code
+
+create_kit_name_kit_test.py:14: AssertionError
+________________________ test_4_more_than_allowed_512 _________________________
+
+    def test_4_more_than_allowed_512():
+>       negative_assert_code_400(kit_body_4)
+
+create_kit_name_kit_test.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+kit_body = {'name': 'Abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd...dabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcD'}
+
+    def negative_assert_code_400(kit_body):
+        auth_token = get_new_user_token()
+        response = post_new_client_kit(kit_body, auth_token)
+>       assert response.status_code == 400
+E       assert 201 == 400
+E        +  where 201 = <Response [201]>.status_code
+
+create_kit_name_kit_test.py:14: AssertionError
+_________________________ test_8_parameter_not_passed _________________________
+
+    def test_8_parameter_not_passed():
+>       negative_assert_code_400(kit_body_8)
+
+create_kit_name_kit_test.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+kit_body = {}
+
+    def negative_assert_code_400(kit_body):
+        auth_token = get_new_user_token()
+        response = post_new_client_kit(kit_body, auth_token)
+>       assert response.status_code == 400
+E       assert 500 == 400
+E        +  where 500 = <Response [500]>.status_code
+
+create_kit_name_kit_test.py:14: AssertionError
+__________________________ test_9_wrong_type_number ___________________________
+
+    def test_9_wrong_type_number():
+>       negative_assert_code_400(kit_body_9)
+
+create_kit_name_kit_test.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+kit_body = {'name': 123}
+
+    def negative_assert_code_400(kit_body):
+        auth_token = get_new_user_token()
+        response = post_new_client_kit(kit_body, auth_token)
+>       assert response.status_code == 400
+E       assert 201 == 400
+E        +  where 201 = <Response [201]>.status_code
+
+create_kit_name_kit_test.py:14: AssertionError
+=========================== short test summary info ===========================
+FAILED create_kit_name_kit_test.py::test_3_less_than_allowed_0 - assert 201 =...
+FAILED create_kit_name_kit_test.py::test_4_more_than_allowed_512 - assert 201...
+FAILED create_kit_name_kit_test.py::test_8_parameter_not_passed - assert 500 ...
+FAILED create_kit_name_kit_test.py::test_9_wrong_type_number - assert 201 == 400
+======================== 4 failed, 5 passed in 10.45s =========================
